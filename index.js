@@ -7,17 +7,17 @@ const port=process.env.PORT || 3000;
 
 //connection of database
 var connection=mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    passsword: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
+    host: "remotemysql.com",
+    user: "pcZ0OkiicI",
+    password: "VM6g25BYW7",
+    database: 'pcZ0OkiicI',
     multipleStatements:true  
 });
 
 //checking if the database is connected or not
 connection.connect((err) => {
     if(err){
-        console.log('Could not connected to database');
+        console.log(err);
     }
     else {
         console.log('Connected to database...');
